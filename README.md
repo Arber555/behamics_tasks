@@ -18,8 +18,8 @@ $ pip install -r requirements.txt
 ```
 
 ## Usage
-First we need to prepare the data for the bestseller collection.
-The next command will use pandas to calculate the statistics, it will extract 20% of the most sold products per category then all the extracted data will be saved in collection bestseller.
+First, we need to prepare the data for the bestseller collection.
+The next command will use pandas to calculate the statistics, it will extract 20% of the most sold products per category then all the extracted data will be saved in collection bestseller. 
 ```bash
 $ cd src
 $ python main.py
