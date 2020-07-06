@@ -1,6 +1,6 @@
-from .DB import DB
+from config.DataBase import DataBase
 
-class Bestseller(DB):
+class Bestseller(DataBase):
 
     def __init__(self):
         super(Bestseller, self).__init__()

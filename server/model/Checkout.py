@@ -1,6 +1,6 @@
-from .DB import DB
+from config.DataBase import DataBase
 
-class Checkout(DB):
+class Checkout(DataBase):
 
     def __init__(self):
         super(Checkout, self).__init__()

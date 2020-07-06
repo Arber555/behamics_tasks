@@ -1,9 +1,17 @@
+import pymongo
 import pandas as pd
+from pymongo import MongoClient
 from itertools import chain
-from model.Checkout import Checkout
-from model.Bestseller import Bestseller
+# from ..server.model.Checkout import Checkout
+# from ..server.model.Bestseller import Bestseller
 
 class DataManipulation:
+
+    def db_connection(self):
+        cluster = MongoClient("mongodb://localhost:27017/")
+        db = cluster["Behamics_DB"]
+
+        return db
 
     def most_sold_products(self):
         '''
@@ -11,7 +19,8 @@ class DataManipulation:
             And save the data for each extracted product in the collection 
             bestseller with fields: productID, category, totalSold.
         '''
-        checkout = Checkout().get_all_checkout()
+        conn = self.db_connection()
+        checkout = conn.checkout.find()
         data_frame = pd.DataFrame(list(checkout))
 
         carts = pd.DataFrame(list(chain.from_iterable(list(data_frame["cart"]))))
@@ -22,4 +31,4 @@ class DataManipulation:
                 .apply(lambda x: x.nlargest(int(len(x) * 0.2), 'count')))
         data.columns = ['category','productID','totalSold']
         
-        Bestseller().add_bestsellers(data.to_dict('records'))
+        conn.bestseller.insert_many(data.to_dict('records'))
