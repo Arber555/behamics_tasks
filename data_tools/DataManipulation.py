@@ -2,8 +2,6 @@ import pymongo
 import pandas as pd
 from pymongo import MongoClient
 from itertools import chain
-# from ..server.model.Checkout import Checkout
-# from ..server.model.Bestseller import Bestseller
 
 class DataManipulation:
 
