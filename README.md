@@ -36,7 +36,7 @@ $ python data_tools/main.py
 Next, we will start the flask server, where we can make an endpoint call to check if a product is a best seller.
 
 ```bash
-$ python data_tools/main.py
+$ python server/app.py 
 ```
 
 *Note: hit this endpoint to test http://localhost:<port>/checkifbestseller/<producId> for example http://localhost:5000/checkifbestseller/10857897491*
