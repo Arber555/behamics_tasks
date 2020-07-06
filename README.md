@@ -39,7 +39,7 @@ Next, we will start the flask server, where we can make an endpoint call to chec
 $ python server/app.py 
 ```
 
-*Note: hit this endpoint to test http://localhost:<port>/checkifbestseller/<producId> for example http://localhost:5000/checkifbestseller/10857897491*
+*Note: hit this endpoint to test http://localhost:"port"/checkifbestseller/"producId" for example http://localhost:5000/checkifbestseller/10857897491*
 
 ## License
 [MIT](https://github.com/Arber555/behamics_tasks/blob/master/LICENSE)
